@@ -54,8 +54,15 @@ To use the script:
 ```
 javascript:(async()=>{const r=/(?<=(\"|%27|`))\/[a-zA-Z0-9_?&=\/\-#\.]*(?=(\"|'|%60))/g,e=new Set,t=document.getElementsByTagName("script"),n=t=>{const a=t.matchAll(r);for(const t of a)e.add(t[0])};await Promise.all(Array.from(t).map(async t=>{try{t.src?n(await(await fetch(t.src)).text()):n(t.innerHTML)}catch(t){console.warn("Script fetch error:",t)}})),n(document.documentElement.outerHTML);const d=location.origin,paths=[...e],win=window.open("","_blank","width=800,height=600,scrollbars=yes");if(!win)return alert("Popup blocked. Please allow popups.");const style=`<style>body{background:#111;color:#eee;font-family:monospace;padding:1em}button,select,input{margin:0.5em 0;padding:0.5em;background:#222;color:#eee;border:1px solid #555}ul{list-style:none;padding-left:0}li{margin:4px 0}a{color:#4fc3f7;text-decoration:none}a:hover{text-decoration:underline}</style>`,html=`<html><head><title>JS Endpoint Extractor by @DarkLotusKDB</title>${style}</head><body><h2>🔗 Extracted Paths (${paths.length})</h2><label>🌐 Optional Prefix Override: <select id="proto"><option>https://</option><option>http://</option></select><input id="domain" placeholder="Leave blank to use current domain"><button onclick="updatePrefix()">Update</button></label><br><button onclick="toggleMode()">🔄 Toggle View (Basic or URL Mode)</button><br><input id='filt' placeholder='Filter...'><ul id='list'>${paths.map(p=>`<li>${p}</li>`).join("")}</ul><button onclick="copyPaths()">📋 Copy</button> <button onclick="downloadPaths()">💾 Download</button><br><p>Thank you for using JS Endpoint Extractor! Happy hacking! 🤍 <br><a href='https://x.com/DarkLotusKDB' target='_blank'>@DarkLotusKDB</a></p><script>let mode='raw',prefix='${d}';const raw=[${paths.map(p=>"`"+p+"`").join(",")}];let links=raw.map(p=>\`<li><a href="\${prefix}\${p}" target="_blank">\${prefix}\${p}</a></li>\`);function updatePrefix(){const proto=document.getElementById('proto').value,dom=document.getElementById('domain').value.trim();prefix=dom?proto+dom:'${d}';links=raw.map(p=>\`<li><a href="\${prefix}\${p}" target="_blank">\${prefix}\${p}</a></li>\`);if(mode==='link')document.getElementById('list').innerHTML=links.join('');}function toggleMode(){const ul=document.getElementById('list');ul.innerHTML=mode==='raw'?links.join(''):raw.map(p=>'<li>'+p+'</li>').join('');mode=mode==='raw'?'link':'raw';}document.getElementById("filt").oninput=()=>{const f=filt.value.toLowerCase();list.querySelectorAll("li").forEach(l=>{const txt=l.innerText.toLowerCase();l.style.display=txt.includes(f)?'':'none'})};function copyPaths(){const visible=[...document.querySelectorAll('li')].filter(l=>l.style.display!=='none').map(l=>l.innerText).join('\\n');navigator.clipboard.writeText(visible);}function downloadPaths(){const visible=[...document.querySelectorAll('li')].filter(l=>l.style.display!=='none').map(l=>l.innerText).join('\\n'),b=new Blob([visible],{type:'text/plain'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='paths.txt';a.click();URL.revokeObjectURL(u);}</script></body></html>`;win.document.write(html);win.document.close()})();
 ```
+
+![Image](https://github.com/user-attachments/assets/e0acd67c-c625-4008-bf4a-c1c73eb50309)
+
 2. Create a new bookmark in your browser and paste this JavaScript code in the URL field.
 3. Activate the bookmarklet on any webpage to extract the URLs.
+
+![Image](https://github.com/user-attachments/assets/84352949-a15e-4eec-85a7-db1245553c2c)
+
+![Image](https://github.com/user-attachments/assets/17f6f510-6fb0-43bb-b9af-8ab990f1080b)
 
 ### Method 2: Direct Execution via Console (Alternative)
 
@@ -72,6 +79,8 @@ If you prefer not to use a bookmarklet, you can run the script directly in the b
 
 3. **Paste and Execute the Script**:
    - Copy the script from Method 1, paste it into the console, and press Enter.
+
+![Image](https://github.com/user-attachments/assets/cbb9876c-ca23-406e-9e08-4a005b68b893)
 
 
 ## Usage Instructions
