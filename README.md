@@ -73,3 +73,16 @@ javascript:(async()=>{const r=/(?<=(\"|%27|`))\/[a-zA-Z0-9_?&=\/\-#\.]*(?=(\"|'|
 ## Contributing
 
 Feel free to contribute by submitting issues or pull requests. If you have ideas for new features or improvements, don't hesitate to open an issue or submit a PR.
+
+## Support Me
+[BuyMeACoffee](https://www.buymeacoffee.com/darklotus) If you like my work <3
+
+## About Me
+
+* **DarkLotus** - *CyberSecurity Researcher* - [DarkLotusKDB](https://github.com/darklotuskdb)
+
+### Social Media Handles
+* [Twitter](https://twitter.com/darklotuskdb)
+* [Medium](https://darklotus.medium.com/)
+* [Linkedin](https://www.linkedin.com/in/kamaldeepbhati/)
+* [Instagram](https://www.instagram.com/kamaldeepbhati/)
