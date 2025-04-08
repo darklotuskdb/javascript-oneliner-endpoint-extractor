@@ -46,8 +46,9 @@ You can copy all visible paths to your clipboard with a single click. The paths 
 You can download the list of visible paths as a `.txt` file. This makes it easy to save the results for further analysis or sharing.
 
 ## Installation
-
 To use the script:
+
+### Method 1:
 1. **Create a bookmarklet**: Copy the following JavaScript code:
 
 ```
@@ -55,6 +56,23 @@ javascript:(async()=>{const r=/(?<=(\"|%27|`))\/[a-zA-Z0-9_?&=\/\-#\.]*(?=(\"|'|
 ```
 2. Create a new bookmark in your browser and paste this JavaScript code in the URL field.
 3. Activate the bookmarklet on any webpage to extract the URLs.
+
+### Method 2: Direct Execution via Console (Alternative)
+
+If you prefer not to use a bookmarklet, you can run the script directly in the browser's developer console.
+
+1. **Open the Developer Tools Console**:
+   - **Chrome/Edge/Brave**: Right-click > Inspect > Console tab.
+   - **Firefox**: Right-click > Inspect > Console tab.
+   - **Safari**: Enable Developer Tools in Preferences, then right-click > Inspect Element > Console tab.
+
+2. **Enable Pasting in Console (if needed)**:
+   - **Chrome**: Type `allow pasting` to enable pasting.
+   - **Firefox**: Pasting is allowed by default, but may need enabling in settings.
+
+3. **Paste and Execute the Script**:
+   - Copy the script from Method 1, paste it into the console, and press Enter.
+
 
 ## Usage Instructions
 
