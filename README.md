@@ -94,8 +94,7 @@ If you prefer not to use a bookmarklet, you can run the script directly in the b
    - **Copy or Download**: Copy the filtered results or download them as a `.txt` file.
 
 ## Credits
-
-- **Original Concept**: This idea was originally demonstrated by NahamSec on YouTube, where the basic functionality was shown. The JavaScript oneliner has been enhanced and made more functional in this version by @DarkLotusKDB.
+This idea was originally demonstrated by NahamSec on YouTube, where the basic functionality was shown. The JavaScript one-liner has since been enhanced and made more functional in this version by @DarkLotusKDB. If you know the original creator of this concept or the script, please let me know, and I will credit them properly.
 
 ## Contributing
 
